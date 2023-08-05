@@ -1,8 +1,9 @@
 import cv2
 import torch
 import numpy as np
+import easyocr
 
-path = './dataset/best.pt'
+path = 'best.pt'
 
 plate = torch.hub.load('ultralytics/yolov5', 'custom',path, force_reload=True)
 cap=cv2.VideoCapture(0)

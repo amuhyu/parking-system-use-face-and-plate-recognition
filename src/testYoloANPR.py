@@ -5,7 +5,7 @@ import easyocr
 import csv
 
 # Load YOLOv5 model
-path = './dataset/best.pt'
+path = 'best.pt'
 
 model = torch.hub.load('ultralytics/yolov5', 'custom',path, force_reload=True)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

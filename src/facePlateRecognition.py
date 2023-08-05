@@ -5,7 +5,7 @@ import easyocr
 import csv
 
 # Load YOLOv5 model
-path = './dataset/best.pt'
+path = 'best.pt'
 
 model = torch.hub.load('ultralytics/yolov5', 'custom',path, force_reload=True)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -20,7 +20,7 @@ facedetect = cv2.CascadeClassifier("haarcascade_frontalface_alt2.xml")
 def detect_and_crop_webcam(confidence_threshold=0.5):
     cap = cv2.VideoCapture(0)  # Menggunakan webcam dengan nomor indeks 0
 
-    csv_file = open('./results/ocr_results.csv', mode='w', newline='')
+    csv_file = open('ocr_results.csv', mode='w', newline='')
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(['Label', 'OCR Text'])
 
